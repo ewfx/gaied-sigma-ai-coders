@@ -1,4 +1,4 @@
-# 🚀 Project Name
+# 🚀 Email And Document Triage
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
