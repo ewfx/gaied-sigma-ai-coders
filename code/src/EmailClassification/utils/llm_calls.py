@@ -5,7 +5,7 @@ import json
 import os
 
 def classify_email(email_text,attachment_text):
-    sec_key="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"
+    sec_key=""
     print(sec_key)
     os.environ["HUGGINGFACEHUB_API_TOKEN"]=sec_key
 
