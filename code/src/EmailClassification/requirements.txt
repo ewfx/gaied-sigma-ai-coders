@@ -1,0 +1,14 @@
+pdfplumber
+pytesseract
+python-docx
+pillow
+pymupdf
+docx2txt
+faiss-cpu
+sentence-transformers
+langchain
+bitsandbytes
+accelerate
+transformers
+huggingface_hub
+numpy

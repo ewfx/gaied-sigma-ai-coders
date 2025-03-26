@@ -56,5 +56,7 @@ Describe the major technical or non-technical challenges your team encountered.
 - 🔹 Other: OpenAI API / Twilio / Stripe
 
 ## 👥 Team
+
+- **SIGMA-AI-CODERS** - [GitHub](#) | [LinkedIn](#)
 - **Your Name** - [GitHub](#) | [LinkedIn](#)
 - **Teammate 2** - [GitHub](#) | [LinkedIn](#)
