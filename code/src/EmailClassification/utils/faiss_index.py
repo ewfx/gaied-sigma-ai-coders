@@ -41,7 +41,7 @@ def add_existing_emails():
         index.add(email_embeddings_np)
 
 ### 2️⃣ Check similarity of a new email ###
-def check_duplicate(file_path, email_text, attachment_text, threshold=0.8):
+def check_duplicate(file_path, email_text, attachment_text, threshold=0.6):
     """Check if a new email is similar to existing emails in FAISS."""
     new_text = email_text + attachment_text
     new_embedding = model.encode(new_text, convert_to_numpy=True).reshape(1, -1)

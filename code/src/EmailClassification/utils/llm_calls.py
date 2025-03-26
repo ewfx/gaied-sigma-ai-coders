@@ -10,7 +10,7 @@ def classify_email(email_text,attachment_text):
     os.environ["HUGGINGFACEHUB_API_TOKEN"]=sec_key
 
     repo_id="mistralai/Mistral-7B-Instruct-v0.3"
-    llm=HuggingFaceEndpoint(repo_id=repo_id,max_length=1000,temperature=0.7,token=sec_key)
+    llm=HuggingFaceEndpoint(repo_id=repo_id,max_length=4096,temperature=0.6,token=sec_key)
 
     llm_chain = LLMChain(llm=llm, prompt=email_prompt_template)
 
@@ -19,8 +19,11 @@ def classify_email(email_text,attachment_text):
 
     # Extract text response
     text_response = response["text"]
+
     print(response)
-    print("Text Output:\n", text_response)
+    print("Output:\n", text_response)
+
+    return text_response
 
     # Extract JSON response using regex
     # json_match = re.search(r"```json\n(.*?)\n```", text_response, re.DOTALL)

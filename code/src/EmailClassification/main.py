@@ -27,32 +27,18 @@ from utils.email_processing import extract_email_text_and_attachment_text
 from utils.faiss_index import add_existing_emails, check_emailSimilarity
 from utils.llm_calls import classify_email
 import json
-def extract_json_from_text(text):
-    """Extracts JSON data from text using string parsing."""
-    try:
-        # Find the starting and ending point of the JSON block
-        json_start = text.find("```json") + len("```json")
-        json_end = text.rfind("```")
-
-        if json_start == -1 or json_end == -1:
-            raise ValueError("No JSON found in text")
-
-        json_data = text[json_start:json_end].strip()
-        return json.loads(json_data)  # Convert string to dictionary
-    except Exception as e:
-        print(f"Error extracting JSON: {e}")
-        return {"error": "Invalid JSON format extracted"}
-    
+        
 app = Flask(__name__)
 
 @app.route("/process-email", methods=["POST"])
 def process_email():
     data = request.get_json()
-    pdf_name = data.get("pdf_name")
-    if not pdf_name:
-        return jsonify({"error": "PDF name is required"}), 400
 
-    file_path = os.path.join("data", pdf_name)
+    file_name = data.get("file_name")
+    if not file_name:
+        return jsonify({"error": "Email file name is required"}), 400
+
+    file_path = os.path.join("data", file_name)
     if not os.path.exists(file_path):
         return jsonify({"error": "File not found"}), 404
 
@@ -62,18 +48,19 @@ def process_email():
     add_existing_emails()
     similarity_score = check_emailSimilarity(file_path, email_text, attachment_text)
     
-    if similarity_score > 0.8:
+    if similarity_score > 0.6:
         return jsonify({"message": "Duplicate detected", "similarity_score": similarity_score})
     else:        
         classification_result = classify_email(email_text, attachment_text)
-        extracted_json = extract_json_from_text(classification_result["text"])
+        json_part=classification_result[classification_result.index("["):]
+        return f"Not a duplicate Similarity_Score: {similarity_score})"+"\n"+json_part
+        # print(json_part)
 
-        return jsonify({
-            "classification": extracted_json,  # Parsed JSON output
-            "raw_text": classification_result["text"],  # Full raw model output
-            "email_text": classification_result["email"],  # Original email body
-            "attachment_text": classification_result["attachment"]  # Extracted attachment text
-        })
+        # try:
+        #     json_data = json.loads(json_part)  # Convert to Python dict
+        #     return json_data
+        # except (SyntaxError, ValueError) as e:
+        #     return jsonify({"Error parsing JSON": e})
    
        
 
