@@ -86,7 +86,7 @@ Optimizing between classification accuracy and processing time, especially for l
 
 ## 🏗️ Tech Stack
 - 🔹 Backend: Flask
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 Other: Hugging Face's Mistral-7B-Instruct-v0.3 / FAISS / LangChain
 
 ## 👥 Team
 - Nalini R
