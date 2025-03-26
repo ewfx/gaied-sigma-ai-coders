@@ -1,3 +1,3 @@
-Replace this file with a document that describes the architecture and design of your solution architecture. This may include
-    - An architecture drawing exported into a png/jpeg format image
-    - A document in pdf or md format that describes your solution
+Email Document Triage Architecture Diagram
+
+![image](https://github.com/user-attachments/assets/b6c0b476-5e8e-4a26-a969-392a613aaec9)
