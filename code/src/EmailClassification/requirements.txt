@@ -12,3 +12,6 @@ accelerate
 transformers
 huggingface_hub
 numpy
+langchain_huggingface
+flask
+uvicorn
