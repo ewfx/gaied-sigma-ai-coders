@@ -78,10 +78,12 @@ Optimizing between classification accuracy and processing time, especially for l
 2. Install dependencies  
    ```sh
    pip install -r requirements.txt (for Python)
+   ** Update the hugging face model api token in the code - llm_calls.py **
    ```
 3. Run the project  
    ```sh
-   npm start  # or python app.py
+   python main.py
+   
    ```
 
 ## 🏗️ Tech Stack
