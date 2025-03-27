@@ -1,5 +1,4 @@
-# 🚀 Email And Document Traige
-
+# 🚀 Gen AI-based Email Classification And OCR
 ## 📌 Table of Contents
 - [Introduction](#introduction)
 - [Demo](#demo)
@@ -14,7 +13,7 @@
 ---
 
 ## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
+Provided automation for email classification of commercial loan bank transaction types and extracted vital information from the email content for the generation of the service loan workflow.
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
@@ -24,39 +23,41 @@ A brief overview of your project and its purpose. Mention which problem statemen
 ![Screenshot 1](link-to-image)
 
 ## 💡 Inspiration
-What inspired you to create this project? Describe the problem you're solving.
+Manual intervention by an email gatekeeper to scan loan email types and feed those details into a loan service workflow would be a tedious and lengthy process, also prone to human error. We identified an opportunity in this problem to reduce manual interventions and process more loan types than regular human intervention allows.
 
 ## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+Email similarity check using Faiss index.
+Email extraction using Tesseract OCR and PDFPlumber.
+Prompt template to identify loan service request types and subtypes, extracting relevant information about the deal from the loan request type.
+LLM classifies the email context and extracts key details of the deal from the email content and attachments.
 
 ## 🛠️ How We Built It
-Briefly outline the technologies, frameworks, and tools used in development.
-
+We used Python Flask API to provide enpoints API, tesseract OCR to extract details from image, pdf plumber to extract content details from email pdf ,LLM Langhchain Hugging face to provide RAG based responses.
 ## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
+Setting up the infrastructure , most of times teams members encounter TokenLimitException which hinder the development completion.
 
 ## 🏃 How to Run
 1. Clone the repository  
    ```sh
-   git clone https://github.com/your-repo.git
+   git clone https://github.com/your-repo.git](https://github.com/ewfx/gaied-sigma-ai-coders.git
    ```
 2. Install dependencies  
-   ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
+    pip install -r requirements.txt (for Python)
    ```
 3. Run the project  
-   ```sh
-   npm start  # or python app.py
+   python main.py
    ```
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 Backend: Flask API/Python , LLM Langchain
+- 
 
 ## 👥 Team
 
 - **SIGMA-AI-CODERS** - [GitHub](#) | [LinkedIn](#)
-- **Your Name** - [GitHub](#) | [LinkedIn](#)
-- **Teammate 2** - [GitHub](#) | [LinkedIn](#)
+- Nalini R
+- Saheb Sheikh
+- Dhirav Choudhary
+- Viral Bundella
+- Rahul Srivastava
+ 
