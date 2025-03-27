@@ -41,10 +41,12 @@ Setting up the infrastructure , most of times teams members encounter TokenLimit
    ```sh
    git clone https://github.com/your-repo.git](https://github.com/ewfx/gaied-sigma-ai-coders.git
    ```
-2. Install dependencies  
+2. Install dependencies
+   ```
     pip install -r requirements.txt (for Python)
    ```
-3. Run the project  
+4. Run the project
+   ```
    python main.py
    ```
 
