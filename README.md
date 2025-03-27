@@ -26,10 +26,10 @@ Provided automation for email classification of commercial loan bank transaction
 Manual intervention by an email gatekeeper to scan loan email types and feed those details into a loan service workflow would be a tedious and lengthy process, also prone to human error. We identified an opportunity in this problem to reduce manual interventions and process more loan types than regular human intervention allows.
 
 ## ⚙️ What It Does
-Email similarity check using Faiss index.
-Email extraction using Tesseract OCR and PDFPlumber.
-Prompt template to identify loan service request types and subtypes, extracting relevant information about the deal from the loan request type.
-LLM classifies the email context and extracts key details of the deal from the email content and attachments.
+- Email similarity check using Faiss index.
+- Email extraction using Tesseract OCR and PDFPlumber.
+- Prompt template to identify loan service request types and subtypes, extracting relevant information about the deal from the loan request type.
+- LLM classifies the email context and extracts key details of the deal from the email content and attachments.
 
 ## 🛠️ How We Built It
 We used Python Flask API to provide enpoints API, tesseract OCR to extract details from image, pdf plumber to extract content details from email pdf ,LLM Langhchain Hugging face to provide RAG based responses.
@@ -51,8 +51,8 @@ Setting up the infrastructure , most of times teams members encounter TokenLimit
    ```
 
 ## 🏗️ Tech Stack
-- 🔹 Backend: Flask API/Python , LLM Langchain
-- 
+-  Backend: Flask API/Python , LLM Langchain
+
 
 ## 👥 Team
 
